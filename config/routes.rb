@@ -1,4 +1,6 @@
 Isys::Application.routes.draw do
+  root :to => 'sessions#new'
+  
   match 'login' => 'sessions#new'
   
   get "sessions/new"
