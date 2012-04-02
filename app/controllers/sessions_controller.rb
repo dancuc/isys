@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_url, notice: "Logged in successfully!"
     else
-      flash.now.alert = "Username or password is invalid"
-      render "new"
+      flash.now.alert = "Invalid login data!"
+      render "new", :layout => 'login'
     end
   end
 end
