@@ -13,4 +13,10 @@ class SessionsController < ApplicationController
       render "new", :layout => 'login'
     end
   end
+  
+  def destroy
+    session[:user_id] = nil
+    reset_session
+    redirect_to login, :layout => "login", notice: => "Logged out!"
+  end
 end
